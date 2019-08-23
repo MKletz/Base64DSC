@@ -15,16 +15,17 @@ function Write-BytesToFile
     Param
     (
         [Parameter(Mandatory = $true)]
-        [Bytes[]]
+        [Byte[]]
         $Bytes,
 
         [Parameter(Mandatory = $true)]
-        [System.IO.FileInfo]
+        [String]
         $Path
     )
 
     Begin
     {
+        $Path = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($Path)
     }
     Process
     {

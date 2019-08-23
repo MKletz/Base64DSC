@@ -19,12 +19,13 @@ function Get-Base64File
         [ValidateScript({
             Test-PathParameter -Path $_
         })]
-        [System.IO.FileInfo]
+        [String]
         $Path
     )
 
     Begin
     {
+        $Path = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($Path)
     }
     Process
     {

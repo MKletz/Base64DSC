@@ -18,7 +18,7 @@ function New-Base64File
     Param
     (
         [Parameter(Mandatory = $true)]
-        [System.IO.FileInfo]
+        [String]
         $Path,
 
         [Parameter(Mandatory = $true)]
@@ -31,12 +31,13 @@ function New-Base64File
 
     Begin
     {
+        $Path = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($Path)
     }
     Process
     {
         Write-Verbose -Message "Testing if file is present at $($Path)"
         
-        if(Test-Path -path $Path -and !$Force)
+        if((Test-Path -path $Path) -and !$Force)
         {
             throw "The file '$($Path)' already exists"
         }
