@@ -98,10 +98,10 @@ PrivateData = @{
         Tags = @('Base64')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/MKletz/Base64ify/blob/master/LICENSE'
 
         # A URL to the main website for this project.
-        ProjectUri = ''
+        ProjectUri = 'https://github.com/MKletz/Base64ify'
 
         # A URL to an icon representing this module.
         # IconUri = ''
@@ -129,4 +129,3 @@ PrivateData = @{
 # DefaultCommandPrefix = ''
 
 }
-
